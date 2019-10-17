@@ -2,6 +2,43 @@
  * This file contains styling for the Main view.
  */
 
+
+/* 
+ *Custom Desktop Specific styling
+ */
+
+ $base-color: hsl(0, 0%, 0%);
+ .ccc-logo {
+    background-image: url(get-resource-path('/ccc-logo.png'));
+    padding-inline-start: 147px;
+    padding-top: 13px;
+    padding-bottom: 25px;
+}; 
+ 
+
+#app-main-1009_header-title-textEl {
+    font-family: Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: 350;
+    color: rgb(50, 173, 116);
+}  
+
+
+
+ @include extjs-panel-ui(
+    $ui: 'highlight-framed',
+    $ui-header-background-color: red,
+    $ui-border-color: red,
+    $ui-header-border-color: red,
+    $ui-body-border-color: red,
+    $ui-border-width: 5px,
+    $ui-border-radius: 5px,
+    $ui-header-color: white
+);
+
+
+
+
 /*
  * Generates a set of style rules for the "navigation" tab UI.
  */

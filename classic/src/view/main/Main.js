@@ -12,7 +12,6 @@ Ext.define('MyApp.view.main.Main', {
     requires: [
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
-
         'MyApp.view.main.MainController',
         'MyApp.view.main.MainModel',
         'MyApp.view.main.List'
@@ -32,12 +31,9 @@ Ext.define('MyApp.view.main.Main', {
             align: 'stretchmax'
         },
         title: {
-            bind: {
-                text: '{name}'
-            },
             flex: 0
         },
-        iconCls: 'fa-th-list'
+        iconCls: 'ccc-logo'
     },
 
     tabBar: {
@@ -75,27 +71,25 @@ Ext.define('MyApp.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
+        title: 'Dashboard',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
             xtype: 'mainlist'
         }]
     }, {
         title: 'Users',
-        iconCls: 'fa-user',
         bind: {
             html: '{loremIpsum}'
         }
     }, {
         title: 'Groups',
-        iconCls: 'fa-users',
+        
         bind: {
             html: '{loremIpsum}'
         }
     }, {
         title: 'Settings',
-        iconCls: 'fa-cog',
+        iconCls: 'x-fa fa-cog',
         bind: {
             html: '{loremIpsum}'
         }

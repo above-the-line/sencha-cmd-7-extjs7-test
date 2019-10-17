@@ -3,16 +3,6 @@
     "namespace": "MyApp",
     "version": "1.0.0.0",
     "framework": "ext",
-
-    /**
-     * The list of required packages (with optional versions; default is "latest").
-     *
-     * For example,
-     *
-     *      "requires": [
-     *          "charts"
-     *      ]
-     */
     "requires": [
         "font-awesome"
     ],
