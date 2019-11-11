@@ -11,8 +11,6 @@ Ext.define('MyApp.view.MyViewport', {
     items: [
         {
             xtype: 'panel',
-            // x: 20,
-            // y: 20,
             height: 400,
             width: 500,
             title: 'Regular Panel',

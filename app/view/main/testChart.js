@@ -1,5 +1,5 @@
-Ext.define('MyApp.view.main.testChart', {
-    extend: 'Ext.Panel',
+Ext.define('MyApp.view.main.TestChart', {
+    extend: 'Ext.chart.CartesianChart',
     // xtype: 'testchart',
     alias: 'widget.testchart',
 
