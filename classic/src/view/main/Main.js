@@ -14,7 +14,8 @@ Ext.define('MyApp.view.main.Main', {
         'Ext.window.MessageBox',
         'MyApp.view.main.MainController',
         'MyApp.view.main.MainModel',
-        'MyApp.view.main.List'
+        'MyApp.view.main.List',
+        'MyApp.view.main.TestChart',
     ],
 
     controller: 'main',
@@ -73,21 +74,34 @@ Ext.define('MyApp.view.main.Main', {
     items: [{
         title: 'Dashboard',
         // The following grid shares a store with the classic version's grid as well!
-        items: [{
-            xtype: 'mainlist'
-        }]
-    }, {
+        items: [
+            // {
+            //     xtype: 'mainlist'
+            // }
+            // ,
+            {
+                xtype: 'testchart'
+            }
+            ,
+            {
+                xtype: 'profitloss'
+            }
+        ]
+    },
+    {
         title: 'Users',
         bind: {
             html: '{loremIpsum}'
         }
-    }, {
+    },
+    {
         title: 'Groups',
         
         bind: {
             html: '{loremIpsum}'
         }
-    }, {
+    },
+    {
         title: 'Settings',
         iconCls: 'x-fa fa-cog',
         bind: {
