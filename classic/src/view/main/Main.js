@@ -15,7 +15,6 @@ Ext.define('MyApp.view.main.Main', {
         'MyApp.view.main.MainController',
         'MyApp.view.main.MainModel',
         'MyApp.view.main.List',
-        'MyApp.view.main.TestChart',
     ],
 
     controller: 'main',
@@ -23,6 +22,7 @@ Ext.define('MyApp.view.main.Main', {
 
     ui: 'navigation',
 
+    
     tabBarHeaderPosition: 1,
     titleRotation: 0,
     tabRotation: 0,
@@ -72,20 +72,26 @@ Ext.define('MyApp.view.main.Main', {
     },
 
     items: [{
+        layout: 'column',
         title: 'Dashboard',
         // The following grid shares a store with the classic version's grid as well!
         items: [
-            // {
-            //     xtype: 'mainlist'
-            // }
-            // ,
             {
-                xtype: 'testchart'
+                xtype: 'profitloss',
+                columnWidth: 0.5
             }
             ,
             {
-                xtype: 'profitloss'
+                xtype: 'needle-gauge',
+                columnWidth: 0.25
             }
+            ,
+            {
+                xtype: 'testchart',
+                columnWidth: 0.25
+            }
+            
+
         ]
     },
     {

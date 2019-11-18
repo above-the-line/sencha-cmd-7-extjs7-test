@@ -7,30 +7,22 @@ Ext.define('MyApp.view.main.ProfitLoss', {
     alias: 'widget.profitloss',
     
     controller: 'profit-loss',
-    width: 650,
+    width: '100%',
     
-    tbar: [
-        '->',
-        {
-            text: 'Preview',
-            handler: 'onPreview'
-        }
-    ],     
+    title: 'Category Profits',
+
     items:[
         {
             xtype: 'cartesian',
             reference: 'profitLossChart',
             width: '100%',
-            height: 500,
-            insetPadding: '40 40 10 40',
+            height: 300,
+            insetPadding: '20 20 5 5',
             store: {
                 type: 'profitloss'
             },
             legend: {
                 docked: 'bottom'
-            },
-            captions: {
-                title: 'Profits and Losses (per product category)'
             },
             axes: [
                 {

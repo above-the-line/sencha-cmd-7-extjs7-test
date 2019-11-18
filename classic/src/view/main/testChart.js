@@ -4,10 +4,10 @@ Ext.define('MyApp.view.main.TestChart', {
     alias: 'widget.testchart',
 
 
-    width: 500,
-    height: 300,
+    width: '100%',
+    height: 150,
     store: {
-        fields: ['name', 'g1', 'g2'],
+        // fields: ['name', 'g1', 'g2'],
         data: [
             {"name": "Item-0", "g1": 18.34,"g2": 0.04},
             {"name": "Item-1", "g1": 2.67, "g2": 14.87},
@@ -27,9 +27,9 @@ Ext.define('MyApp.view.main.TestChart', {
         ]
     },
 
-    legend: {
-        docked: 'right'
-    },
+    // legend: {
+    //     docked: 'right'
+    // },
 
     axes: [{
         type: 'numeric',
