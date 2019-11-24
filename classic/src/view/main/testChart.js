@@ -2,53 +2,84 @@ Ext.define('MyApp.view.main.TestChart', {
     extend: 'Ext.chart.CartesianChart',
     // xtype: 'testchart',
     alias: 'widget.testchart',
-
+    // background: {
+    //     type: 'linear',
+    //     degrees: 0,
+    //     stops: [
+    //         {
+    //             offset: 1,
+    //             color: '#e3e3e3'
+    //         },
+    //         {
+    //             offset: 0,
+    //             color: '#e3e3e3'
+    //         }
+    //     ]
+    // },
+    
+    // iconCls: 'x-fa fa-cog',
 
     width: '100%',
     height: 150,
     store: {
-        // fields: ['name', 'g1', 'g2'],
+        // fields: ['name', 'TodaysHits', 'AllTimeHigh'],
         data: [
-            {"name": "Item-0", "g1": 18.34,"g2": 0.04},
-            {"name": "Item-1", "g1": 2.67, "g2": 14.87},
-            {"name": "Item-2", "g1": 1.90, "g2": 5.72},
-            {"name": "Item-3", "g1": 21.37,"g2": 2.13},
-            {"name": "Item-4", "g1": 2.67, "g2": 8.53},
-            {"name": "Item-5", "g1": 18.22,"g2": 4.62},
-            {"name": "Item-6", "g1": 28.51, "g2": 12.43},
-            {"name": "Item-7", "g1": 34.43, "g2": 4.40},
-            {"name": "Item-8", "g1": 21.65, "g2": 13.87},
-            {"name": "Item-9", "g1": 12.98, "g2": 35.44},
-            {"name": "Item-10", "g1": 22.96, "g2": 38.70},
-            {"name": "Item-11", "g1": 0.49, "g2": 51.90},
-            {"name": "Item-12", "g1": 20.87, "g2": 62.07},
-            {"name": "Item-13", "g1": 25.10, "g2": 78.46},
-            {"name": "Item-14", "g1": 16.87, "g2": 56.80}
+            {"name": "Item-0", "TodaysHits": 18.34,"AllTimeHigh": 0.04},
+            {"name": "Item-1", "TodaysHits": 2.67, "AllTimeHigh": 14.87},
+            {"name": "Item-2", "TodaysHits": 1.90, "AllTimeHigh": 5.72},
+            {"name": "Item-3", "TodaysHits": 21.37,"AllTimeHigh": 2.13},
+            {"name": "Item-4", "TodaysHits": 2.67, "AllTimeHigh": 8.53},
+            {"name": "Item-5", "TodaysHits": 18.22,"AllTimeHigh": 4.62},
+            {"name": "Item-6", "TodaysHits": 28.51, "AllTimeHigh": 12.43},
+            {"name": "Item-7", "TodaysHits": 34.43, "AllTimeHigh": 4.40},
+            {"name": "Item-8", "TodaysHits": 21.65, "AllTimeHigh": 13.87},
+            {"name": "Item-9", "TodaysHits": 12.98, "AllTimeHigh": 35.44},
+            {"name": "Item-10", "TodaysHits": 22.96, "AllTimeHigh": 38.70},
+            {"name": "Item-11", "TodaysHits": 0.49, "AllTimeHigh": 51.90},
+            {"name": "Item-12", "TodaysHits": 20.87, "AllTimeHigh": 62.07},
+            {"name": "Item-13", "TodaysHits": 25.10, "AllTimeHigh": 78.46},
+            {"name": "Item-14", "TodaysHits": 16.87, "AllTimeHigh": 56.80}
         ]
     },
 
-    // legend: {
-    //     docked: 'right'
-    // },
+    legend: {
+        docked: 'bottom'
+    },
 
     axes: [{
         type: 'numeric',
         position: 'left',
-        grid: true
+        grid: false,
+        hidden: true
     }, {
         type: 'category',
+        opacity: 0,
         position: 'bottom',
-        visibleRange: [0, 0.4]
+        hidden: true,
+        visibleRange: [0, 100],
+        style: {
+            strokeStyle: 'red'
+        },
+        // padding: 20,    //the below don't work when hidden is true
+        // margin: 30,
+        // floating: -50,
+        // title: 'hourly hits vs yearly high'
     }],
 
     series: [{
         type: 'area',
+        subStyle: {
+            // Low (grey) / High (red)
+            fill: ['#bfbfbf', '#f2c2c2'],   //COLOR OF THE AREAS
+            fillOpacity: [0.3, 0.5],
+            stroke: ['#1a1a1a', '#d42626']    //STROKE LINE OF THE INDIVIDUAL AREAS
+        },
         xField: 'name',
-        yField: ['g1', 'g2'],
-        title: ['G1', 'G2'],
+        yField: ['TodaysHits', 'AllTimeHigh'],
+        title: ['TodaysHits', 'AllTimeHigh'],
         style: {
-            stroke: '#666666',
-            fillOpacity: 0.8
+            // stroke: '#ffffff',            //GLOBAL CHART STROKE ALL SET TO:
+            // fillOpacity: 1.0            //GLOBAL CHART AREA ALL SET TO TRANSPARENT OR SOLID
         }
     }]
 });
