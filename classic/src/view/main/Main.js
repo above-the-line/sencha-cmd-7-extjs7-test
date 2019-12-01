@@ -90,6 +90,11 @@ Ext.define('MyApp.view.main.Main', {
                 xtype: 'testchart',
                 columnWidth: 0.25
             }
+            ,
+            {
+                xtype: 'cost-center-pie-chart',
+                columnWidth: 0.5
+            }
             
 
         ]
