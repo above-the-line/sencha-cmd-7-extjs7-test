@@ -29,7 +29,8 @@ Ext.define('MyApp.view.main.ProfitLoss', {
                 type: 'numeric',
                 position: 'left',
                 fields: ['shirts', 'dresses', 'trousers', 'accessories'],
-                grid: true
+                grid: true,
+                // COLOR IS MODIEFIED IN THE CONTROLLER
                 },
                 {
                 type: 'category',
@@ -50,3 +51,5 @@ Ext.define('MyApp.view.main.ProfitLoss', {
     }
 
 });
+
+

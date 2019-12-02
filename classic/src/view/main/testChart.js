@@ -70,7 +70,7 @@ Ext.define('MyApp.view.main.TestChart', {
         type: 'area',
         subStyle: {
             // Low (grey) / High (red)
-            fill: ['#bfbfbf', '#f2c2c2'],   //COLOR OF THE AREAS
+            fill: ['#f5f5f5', '#f2c2c2'],   //COLOR OF THE AREAS
             fillOpacity: [0.3, 0.5],
             stroke: ['#1a1a1a', '#d42626']    //STROKE LINE OF THE INDIVIDUAL AREAS
         },
