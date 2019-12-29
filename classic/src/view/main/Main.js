@@ -78,20 +78,45 @@ Ext.define('MyApp.view.main.Main', {
         items: [
             {
                 xtype: 'profitloss',
-                columnWidth: 0.5
+                columnWidth: 0.5,
             }
             ,
             {
                 xtype: 'needle-gauge',
-                columnWidth: 0.25
+                columnWidth: 0.25,
             }
             ,
             {
                 xtype: 'testchart',
-                columnWidth: 0.25
+                columnWidth: 0.25,
             }
-            
-
+            ,
+            // {
+            //     xtype: 'needle-gauge',
+            //     columnWidth: 0.25
+            // }
+            // ,
+            // {
+            //     xtype: 'testchart',
+            //     columnWidth: 0.25
+            // }
+            // ,
+            // {
+            //     padding: '60 0 0 0',
+            //     title: 'Cost Centers',
+            //     xtype: 'cost-center-pie-chart',
+            //     columnWidth: 0.5
+            // }
+            ,
+            {
+                xtype: 'customerlist',
+                columnWidth: 1,          
+                // store: {
+                //     model: 'MyApp.model.Customer',
+                //     autoLoad: true
+                // },
+            }
+            ,
         ]
     },
     {

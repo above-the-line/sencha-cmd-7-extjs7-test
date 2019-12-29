@@ -2,9 +2,21 @@ Ext.define('MyApp.view.main.WebSalesGaugeController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.anchored-tooltips',
 
+    config: {
+        title: 'Todays Sales v. All Time High'
+    },
+
+    // onAfterRender: function() {
+    //     var gague = this.lookup('webSalesGauge');
+
+    //     gague.setTitle(getTitle());
+
+    //     console.log(getTitle());
+    // },
+
     afterRender: function() {
         var tips = [{
-            target: this.lookup('webSales').el,
+            target: this.lookup('webSalesGauge'),
             html: 'Today\'s websales against all time high'
         }
         // , 
@@ -25,6 +37,8 @@ Ext.define('MyApp.view.main.WebSalesGaugeController', {
         // }
         ];
 
+        // console.log("hello");
+
         this.tips = Ext.Array.map(tips, function(cfg) {
             cfg.showOnTap = true;
 
@@ -32,8 +46,8 @@ Ext.define('MyApp.view.main.WebSalesGaugeController', {
         });
     },
 
-    destroy: function() {
-        this.tips = Ext.destroy(this.tips);
-        this.callParent();
-    }
+    // destroy: function() {
+    //     this.tips = Ext.destroy(this.tips);
+    //     this.callParent();
+    // }
 });
