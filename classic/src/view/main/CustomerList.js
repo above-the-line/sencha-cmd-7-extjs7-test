@@ -2,7 +2,7 @@ Ext.define('MyApp.view.main.CustomerList', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.customerlist',
 
-    title: 'Customers',
+    title: 'GET Customers from ARES API',
 
     // NOTE THAT THE STORE IS NOT DEFINED ELSEWHERE
     // IT IS DEFINED AND INSTANTIATED HERE 
@@ -13,7 +13,14 @@ Ext.define('MyApp.view.main.CustomerList', {
             },
     },
 
+    height: 200,
 
+    dockedItems: [{
+        xtype: 'customerlisttoolbar',
+        dock: 'top',
+        overflowHandler: 'menu'
+    }],
+ 
     columns: [
         { text: 'CustomerID',  dataIndex: 'customerId', flex: .25 },
         { text: 'Title', dataIndex: 'title', flex: .25 },

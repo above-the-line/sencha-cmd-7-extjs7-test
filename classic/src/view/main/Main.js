@@ -76,21 +76,21 @@ Ext.define('MyApp.view.main.Main', {
         title: 'Dashboard',
         // The following grid shares a store with the classic version's grid as well!
         items: [
-            {
-                xtype: 'profitloss',
-                columnWidth: 0.5,
-            }
-            ,
-            {
-                xtype: 'needle-gauge',
-                columnWidth: 0.25,
-            }
-            ,
-            {
-                xtype: 'testchart',
-                columnWidth: 0.25,
-            }
-            ,
+            // {
+            //     xtype: 'profitloss',
+            //     columnWidth: 0.5,
+            // }
+            // ,
+            // {
+            //     xtype: 'needle-gauge',
+            //     columnWidth: 0.25,
+            // }
+            // ,
+            // {
+            //     xtype: 'testchart',
+            //     columnWidth: 0.25,
+            // }
+            // ,
             // {
             //     xtype: 'needle-gauge',
             //     columnWidth: 0.25
@@ -107,18 +107,24 @@ Ext.define('MyApp.view.main.Main', {
             //     xtype: 'cost-center-pie-chart',
             //     columnWidth: 0.5
             // }
-            ,
+            // ,
             {
                 xtype: 'customerlist',
                 columnWidth: 1,          
+               
+                // STORE COULD HAVE BEEN ASSIGNED HERE
                 // store: {
                 //     model: 'MyApp.model.Customer',
                 //     autoLoad: true
                 // },
             }
-            ,
+            // ,
+            // {
+            //     xtype: 'customerlistfieldcontainer',
+            //     columnWidth: 0.5,
+            // }
         ]
-    },
+    }, // Dashboard tab
     {
         title: 'Users',
         bind: {

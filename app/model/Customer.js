@@ -6,12 +6,11 @@ Ext.define('MyApp.model.Customer', {
     extend: 'Ext.data.Model',
     
 
-    // changeName: function() {
-    //     var oldName = this.get('customerFirstName'),
-    //         newName = oldName + " The Barbarian";
-
-    //     this.set('customerFirstName', newName);
-    // },
+    changeName: function() {
+        var oldName = this.get('customerFirstName'),
+            newName = oldName + " The Barbarian";
+        this.set('customerFirstName', newName);
+    },
 
 
     fields: [{
