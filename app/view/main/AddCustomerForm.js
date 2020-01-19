@@ -12,6 +12,7 @@ Ext.define('MyApp.view.main.AddCustomerForm', {
     extend: 'Ext.form.Panel',
     alias: 'widget.addcustomerform',
     controller: 'addcustomerformcontroller',
+    viewModel: '',
 
     // profiles: {
     //     classic: {
@@ -94,9 +95,15 @@ Ext.define('MyApp.view.main.AddCustomerForm', {
                 enforceMaxLength: true,
                 maskRe: /[0-9.]/
             },
-            items: [
-                { xtype: 'textfield', fieldLabel: 'Customer ID', name: 'customerId', width: 45, allowBlank: false, maxLength: 3 },
-            ] 
+            items: [{
+                xtype: 'textfield', 
+                fieldLabel: 'Customer ID',
+                // bind: '{currentCustomer.customerId}',
+                name: 'customerId',
+                width: 45,
+                allowBlank: false,
+                maxLength: 3 
+            }] 
         },
         
         // An encapsulation container - for a row that has multiple fields
@@ -122,6 +129,7 @@ Ext.define('MyApp.view.main.AddCustomerForm', {
                         editable: false,
                         fieldLabel: 'Title',
                         name: 'title',
+                        // bind: '{currentCustomer.customerTitle}',
                         displayField: 'name',
                         valueField: 'value',
                         store: {
@@ -137,6 +145,7 @@ Ext.define('MyApp.view.main.AddCustomerForm', {
                         xtype: 'textfield',
                         flex: 0.5,
                         name: 'firstName',
+                        // bind: '{currentCustomer.customerFirstName}',
                         fieldLabel: 'First',
                         allowBlank: false
                     }, 
@@ -144,6 +153,7 @@ Ext.define('MyApp.view.main.AddCustomerForm', {
                         xtype: 'textfield',
                         flex: 0.5,
                         name: 'lastName',
+                        // bind: '{currentCustomer.customerLastName}',
                         fieldLabel: 'Last',
                         allowBlank: false
                     },  
@@ -219,3 +229,9 @@ Ext.define('MyApp.view.main.AddCustomerForm', {
 
     ]
 });
+
+
+
+
+
+

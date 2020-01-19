@@ -1,5 +1,5 @@
 Ext.define('MyApp.model.AddCustomerFormModel', {
-    extend: 'MyApp.model.Base',
+    extend: 'Ext.data.Model',
     fields: [
         { name: 'customerId', type: 'string' },
         { name: 'title', type: 'string' },

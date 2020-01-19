@@ -3,7 +3,6 @@
  * "mainView" property. That setting automatically applies the "viewport"
  * plugin causing this view to become the body element (i.e., the viewport).
  *
- * TODO - Replace this content of this view to suite the needs of your application.
  */
 Ext.define('MyApp.view.main.Main', {
     extend: 'Ext.tab.Panel',
@@ -76,11 +75,11 @@ Ext.define('MyApp.view.main.Main', {
         title: 'Dashboard',
         // The following grid shares a store with the classic version's grid as well!
         items: [
-            // {
-            //     xtype: 'profitloss',
-            //     columnWidth: 0.5,
-            // }
-            // ,
+            {
+                xtype: 'profitloss',
+                columnWidth: 0.5,
+            }
+            ,
             // {
             //     xtype: 'needle-gauge',
             //     columnWidth: 0.25,
@@ -99,19 +98,21 @@ Ext.define('MyApp.view.main.Main', {
             // {
             //     xtype: 'testchart',
             //     columnWidth: 0.25
-            // }
-            // ,
-            // {
-            //     padding: '60 0 0 0',
-            //     title: 'Cost Centers',
-            //     xtype: 'cost-center-pie-chart',
-            //     columnWidth: 0.5
             // }
             // ,
             {
+                padding: '60 0 0 0',
+                title: 'Cost Centers',
+                xtype: 'cost-center-pie-chart',
+                columnWidth: 0.5
+            }
+            ,
+            {
                 xtype: 'customerlist',
                 columnWidth: 1,          
-               
+          
+                
+
                 // STORE COULD HAVE BEEN ASSIGNED HERE
                 // store: {
                 //     model: 'MyApp.model.Customer',
