@@ -67,12 +67,25 @@ Ext.define('MyApp.view.AddCustomerFormController', {
         console.log(formResponses);
 
         let restPayload = Ext.create('MyApp.model.Customer', {
-                'customerId': formResponses["customerId"],
-                'title': formResponses["customerTitle"],
-                'firstName': formResponses["customerFirstName"],
-                'lastName': formResponses["customerLastName"],
-            })
+            "branchId": "1",
+            "customerId": formResponses["customerId"],
+            "title": formResponses["title"],
+            "firstName": formResponses["firstName"],
+            "lastName": formResponses["lastName"],
+        })
         
+
+        
+
+
+        console.log(restPayload.getProxy().getUrl());
+        
+        
+        console.log(restPayload);
+        console.log("================")
+        console.log("================")
+        console.log("End of Controller Script")
+        // restPayload.setappendId(false);
         restPayload.save()
 
     },

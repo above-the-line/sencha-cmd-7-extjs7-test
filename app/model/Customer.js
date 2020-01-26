@@ -24,64 +24,108 @@ Ext.define('MyApp.model.Customer', {
     alias: 'model.Customer',
     extend: 'Ext.data.Model', 
 
-    // changeName: function() {
-    //     var oldName = this.get('customerFirstName'),
-    //         newName = oldName + " The Barbarian";
-    //     this.set('customerFirstName', newName);
-    // },
-
-    idProperty: 'customerId',
-
-    fields: [{
-        name: 'customerId',
-        idProperty: 'customerId',
-        type: 'string',
-        mapping: 'customerId'
-    }, {
-        name: 'customerTitle',
-        type: 'string',
-        mapping: 'title'
-    }, {
-        name: 'customerFirstName',
-        type: 'string',
-        mapping: 'firstName'
-    }, {
-        name: 'customerLastName',
-        type: 'string',
-        mapping: 'lastName'
-    }],
-
-    // 
-    // Since we want to shorten the amount we type
-    // we can define a schema which specifies a namespace
-    // 
-    // schema: {
-    //     namespace: 'MyApp.model.Customer',  //so auto generated customers will appear as MyApp.model.Customer.1
+    // config: {
+        fields: [{
+            name: 'branchId',
+            idProperty: 'branchId',
+            type: 'int',
+            mapping: "branchId"
+        }, {
+            name: 'customerId',
+            idProperty: 'customerId',
+            type: 'string',
+            mapping: "customerId",
+            persist: false,
+        }, {
+            name: 'customerTitle',
+            type: 'string',
+            mapping: "title"
+        }, {
+            name: 'customerFirstName',
+            type: 'string',
+            mapping: "firstName"
+        }, {
+            name: 'customerLastName',
+            type: 'string',
+            mapping: "lastName"
+        }],
+        
+        
+        // Create the store
         proxy: {
             type: 'rest',
-            idParam: 'customerId',
-            api: {
-                create : '/'
-            },
-            url: 'http://45.76.116.27/ARESAPI/customers/',
+            url: 'http://45.76.116.27/ARESAPI/customers',
+            
+            // idParam: 'customerId',
+            // clientIdProperty: 'customerId',
+            // idProperty: 'customersId',
+            // Xhr if using CORS set to false
+            // useDefaultXhrHeader:true,
+            // writeAllFields: false,
+
+            // stops _dc parameter (disable caching - set the ) being added to end of query
+            noCache: false,
+            // stops all ids being sent in header
+            appendId: true, 
+           
+            writeRecordId: false,
+            // paramsAsJson: true,
+
+            // actionMethods:{
+            //     create: 'POST',
+            //     read: 'GET',
+            //     update: 'PUT',
+            //     destroy: 'DELETE'
+            // },
+
+            // UNIQUE CRUD URLS
+            // api: {
+            //     read: 'http://45.76.116.27/ARESAPI/customers/',
+            //     create : 'http://45.76.116.27/ARESAPI/customers',
+            //     update: 'http://45.76.116.27/ARESAPI/customers',
+            // }, 
+
             reader: {
                 type: 'json',
-                rootProperty: ''
+                // rootProperty: '',
             },
-            // There is no error handling here, if the 
-            // request fails then nothing will display in the store
-            // and the store will stop displaying at the point
-            // of the first failure
+
+            writer: {
+                type: 'json',
+                // rootProperty: 'data',
+                writeRecordId: false,
+                // disableCaching: false,   
+                // appendId: false,
+                allowSingle: true,
+                proxy: {
+                    appendId: false,
+                    listeners: {
+                        exception: function(proxy, response, operation){  
+                            
+                            console.log(response);
+                        }
+                    }      
+                },
+            },
+
+             // custom name for the id
+             clientIdProperty: 'customerId',
+             // changes: true -> Only include modified fields (default)
+             // critical: true -> Always include “critical” fields, regardless of change (default)
+             // associated: true -> Include association data
+            //  partialDataOptions: {
+            //      changes: false, 
+            //      critical: true,
+            //      associated: true
+            //  },
+
             listeners: {
                 exception: function(proxy, response, operation){  
                     console.log(response);
                 }
             }
-        }
-    // }//schema
-
- 
-
+        } //proxy
+    // }// config
 
 });
 
