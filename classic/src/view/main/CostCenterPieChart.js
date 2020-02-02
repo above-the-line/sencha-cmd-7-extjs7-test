@@ -26,7 +26,12 @@ Ext.define('MyApp.view.main.CostCenterPieChart', {
     
     // innerPadding: 20,
    
+  
+  
+  
     items: [{
+        // title: 'Cost Centers:',
+        // headerPosition: 'left',
         xtype: 'polar',
         reference: 'cost_center_chart', //referenced by controller
         captions: {
@@ -38,13 +43,14 @@ Ext.define('MyApp.view.main.CostCenterPieChart', {
             // }
         },
         width: '100%',
-        height: 450,
-        innerPadding: 30,
+        height: 250,
+        innerPadding: 25,
         store: {
             type: 'cost-center'
         },
         legend: {
-            float: 'bottom'
+            type:'sprite',
+            docked: 'left'
         },
         interactions: ['rotate', 'itemhighlight'],    
         series: [{

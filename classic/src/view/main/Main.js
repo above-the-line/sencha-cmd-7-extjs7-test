@@ -3,7 +3,6 @@
  * "mainView" property. That setting automatically applies the "viewport"
  * plugin causing this view to become the body element (i.e., the viewport).
  *
- * TODO - Replace this content of this view to suite the needs of your application.
  */
 Ext.define('MyApp.view.main.Main', {
     extend: 'Ext.tab.Panel',
@@ -78,7 +77,7 @@ Ext.define('MyApp.view.main.Main', {
         items: [
             {
                 xtype: 'profitloss',
-                columnWidth: 0.5,
+                columnWidth: 0.50,
             }
             ,
             {
@@ -96,29 +95,45 @@ Ext.define('MyApp.view.main.Main', {
             //     columnWidth: 0.25
             // }
             // ,
+            {
+                xtype: 'testchart',
+                columnWidth: 0.5,
+            }
+            ,
             // {
-            //     xtype: 'testchart',
-            //     columnWidth: 0.25
+            //     xtype: 'customerlist',
+            //     columnWidth: 0.5,          
+          
+                
+
+            //     // STORE COULD HAVE BEEN ASSIGNED HERE
+            //     // store: {
+            //     //     model: 'MyApp.model.Customer',
+            //     //     autoLoad: true
+            //     // },
             // }
             // ,
-            // {
-            //     padding: '60 0 0 0',
-            //     title: 'Cost Centers',
-            //     xtype: 'cost-center-pie-chart',
-            //     columnWidth: 0.5
-            // }
-            ,
             {
                 xtype: 'customerlist',
                 columnWidth: 1,          
-                // store: {
-                //     model: 'MyApp.model.Customer',
-                //     autoLoad: true
-                // },
+                title: 'Top Customers'
             }
             ,
+            {
+                // padding: '0 0 0 0',
+                title: 'Cost Centers',
+                headerPosition: 'left',
+                xtype: 'cost-center-pie-chart',
+                columnWidth: 0.5
+            }
+            ,
+            // ,
+            // {
+            //     xtype: 'customerlistfieldcontainer',
+            //     columnWidth: 0.5,
+            // }
         ]
-    },
+    }, // Dashboard tab
     {
         title: 'Users',
         bind: {
