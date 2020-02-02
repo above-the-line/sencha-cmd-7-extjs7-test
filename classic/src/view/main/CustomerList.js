@@ -8,9 +8,10 @@ Ext.define('MyApp.view.main.CustomerList', {
         type: 'customerlist',
     },
 
-    title: 'GET Customers from ARES API',
+    title: 'Customers who buy the most',
 
     height: 300,
+    width: '100%',
     layout: {
         type: 'vbox',
         align: 'stretch'
@@ -27,8 +28,8 @@ Ext.define('MyApp.view.main.CustomerList', {
     columns: [
         { text: 'CustomerID',  dataIndex: 'customerId', flex: .25 },
         { text: 'Title', dataIndex: 'title', flex: .25 },
-        { text: 'First Name', dataIndex: 'customerFirstName', flex: 1 },
-        { text: 'Last Name', dataIndex: 'customerLastName', flex: 1 }
+        { text: 'First Name', dataIndex: 'firstName', flex: 1 },
+        { text: 'Last Name', dataIndex: 'lastName', flex: 1 }
     ],
 
 

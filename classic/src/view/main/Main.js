@@ -77,48 +77,56 @@ Ext.define('MyApp.view.main.Main', {
         items: [
             {
                 xtype: 'profitloss',
+                columnWidth: 0.50,
+            }
+            ,
+            {
+                xtype: 'needle-gauge',
+                columnWidth: 0.25,
+            }
+            ,
+            {
+                xtype: 'testchart',
+                columnWidth: 0.25,
+            }
+            ,
+            // {
+            //     xtype: 'needle-gauge',
+            //     columnWidth: 0.25
+            // }
+            // ,
+            {
+                xtype: 'testchart',
                 columnWidth: 0.5,
             }
             ,
             // {
-            //     xtype: 'needle-gauge',
-            //     columnWidth: 0.25,
-            // }
-            // ,
-            // {
-            //     xtype: 'testchart',
-            //     columnWidth: 0.25,
-            // }
-            // ,
-            // {
-            //     xtype: 'needle-gauge',
-            //     columnWidth: 0.25
-            // }
-            // ,
-            // {
-            //     xtype: 'testchart',
-            //     columnWidth: 0.25
+            //     xtype: 'customerlist',
+            //     columnWidth: 0.5,          
+          
+                
+
+            //     // STORE COULD HAVE BEEN ASSIGNED HERE
+            //     // store: {
+            //     //     model: 'MyApp.model.Customer',
+            //     //     autoLoad: true
+            //     // },
             // }
             // ,
             {
-                padding: '60 0 0 0',
+                xtype: 'customerlist',
+                columnWidth: 1,          
+                title: 'Top Customers'
+            }
+            ,
+            {
+                // padding: '0 0 0 0',
                 title: 'Cost Centers',
+                headerPosition: 'left',
                 xtype: 'cost-center-pie-chart',
                 columnWidth: 0.5
             }
             ,
-            {
-                xtype: 'customerlist',
-                columnWidth: 1,          
-          
-                
-
-                // STORE COULD HAVE BEEN ASSIGNED HERE
-                // store: {
-                //     model: 'MyApp.model.Customer',
-                //     autoLoad: true
-                // },
-            }
             // ,
             // {
             //     xtype: 'customerlistfieldcontainer',

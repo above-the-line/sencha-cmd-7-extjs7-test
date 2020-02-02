@@ -35,17 +35,17 @@ Ext.define('MyApp.model.Customer', {
             idProperty: 'customerId',
             type: 'string',
             mapping: "customerId",
-            persist: false,
+            // persist: false,
         }, {
-            name: 'customerTitle',
+            name: 'title',
             type: 'string',
             mapping: "title"
         }, {
-            name: 'customerFirstName',
+            name: 'firstName',
             type: 'string',
             mapping: "firstName"
         }, {
-            name: 'customerLastName',
+            name: 'lastName',
             type: 'string',
             mapping: "lastName"
         }],
@@ -56,7 +56,7 @@ Ext.define('MyApp.model.Customer', {
             type: 'rest',
             url: 'http://45.76.116.27/ARESAPI/customers',
             
-            // idParam: 'customerId',
+            
             // clientIdProperty: 'customerId',
             // idProperty: 'customersId',
             // Xhr if using CORS set to false
@@ -68,15 +68,16 @@ Ext.define('MyApp.model.Customer', {
             // stops all ids being sent in header
             appendId: true, 
            
-            writeRecordId: false,
+            // writeRecordId: false,
             // paramsAsJson: true,
 
-            // actionMethods:{
-            //     create: 'POST',
-            //     read: 'GET',
-            //     update: 'PUT',
-            //     destroy: 'DELETE'
-            // },
+            // Without this create is not POST
+            actionMethods:{
+                create: 'POST',
+                read: 'GET',
+                update: 'PUT',
+                destroy: 'DELETE'
+            },
 
             // UNIQUE CRUD URLS
             // api: {
@@ -93,23 +94,27 @@ Ext.define('MyApp.model.Customer', {
             writer: {
                 type: 'json',
                 // rootProperty: 'data',
-                writeRecordId: false,
+                // writeRecordId: false,
                 // disableCaching: false,   
                 // appendId: false,
-                allowSingle: true,
+                // allowSingle: true,
+                // custom name for the auto generated id property
+                // clientIdProperty: 'customerId',
+                // idParam: 'customerId',
                 proxy: {
+                    // IdProperty: 'customerId',
                     appendId: false,
+                    
                     listeners: {
                         exception: function(proxy, response, operation){  
                             
-                            console.log(response);
+                        console.log(response);
                         }
                     }      
                 },
             },
 
-             // custom name for the id
-             clientIdProperty: 'customerId',
+             
              // changes: true -> Only include modified fields (default)
              // critical: true -> Always include “critical” fields, regardless of change (default)
              // associated: true -> Include association data

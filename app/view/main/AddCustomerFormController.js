@@ -82,11 +82,35 @@ Ext.define('MyApp.view.AddCustomerFormController', {
         
         
         console.log(restPayload);
+
+
+        // nifty way to inject values
+        // restPayload.set('customerId', formResponses["customerId"])
+        
+        // If not true it will add id during POST
+        // restPayload.phantom=true;
+
+
+
+        // you should either use another idproperty or rename your id so that an implicit id is used by the framework (internal id).
+
+        // The dirty/phantom would then work and posting would include the user id in data, but not as the key of the record.
+
+
+
+        
         console.log("================")
         console.log("================")
         console.log("End of Controller Script")
         // restPayload.setappendId(false);
-        restPayload.save()
+        restPayload.save({
+            success: function(){
+                console.log("Updated OK from AddCustomerFormController")
+            },
+            failure: function(){
+                callrestPayload.sync()
+            }
+        })
 
     },
 
