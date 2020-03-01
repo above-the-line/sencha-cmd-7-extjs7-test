@@ -23,6 +23,8 @@ Ext.define('MyApp.view.main.CustomerListViewModel', {
             ],        
         },
         
-    }
+    },
+
+
 
 })

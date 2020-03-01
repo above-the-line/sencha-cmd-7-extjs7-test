@@ -16,7 +16,7 @@ Ext.define('MyApp.view.main.Main', {
         'MyApp.view.main.List',
     ],
 
-    controller: 'main',
+    controllers: ['main', ],
     viewModel: 'main',
 
     ui: 'navigation',
@@ -90,17 +90,31 @@ Ext.define('MyApp.view.main.Main', {
                 columnWidth: 0.25,
             }
             ,
-            // {
-            //     xtype: 'needle-gauge',
-            //     columnWidth: 0.25
-            // }
-            // ,
             {
                 xtype: 'testchart',
                 columnWidth: 0.5,
             }
             ,
+            {
+                xtype: 'customerlist',
+                columnWidth: 1,          
+                title: 'Top Customers'
+            }
+            ,
             // {
+            //     // padding: '0 0 0 0',
+            //     title: 'Cost Centers',
+            //     headerPosition: 'left',
+            //     xtype: 'cost-center-pie-chart',
+            //     columnWidth: 0.5
+            // }
+            // ,
+                        // {
+            //     xtype: 'needle-gauge',
+            //     columnWidth: 0.25
+            // }
+            // ,
+              // {
             //     xtype: 'customerlist',
             //     columnWidth: 0.5,          
           
@@ -113,20 +127,6 @@ Ext.define('MyApp.view.main.Main', {
             //     // },
             // }
             // ,
-            {
-                xtype: 'customerlist',
-                columnWidth: 1,          
-                title: 'Top Customers'
-            }
-            ,
-            {
-                // padding: '0 0 0 0',
-                title: 'Cost Centers',
-                headerPosition: 'left',
-                xtype: 'cost-center-pie-chart',
-                columnWidth: 0.5
-            }
-            ,
             // ,
             // {
             //     xtype: 'customerlistfieldcontainer',
